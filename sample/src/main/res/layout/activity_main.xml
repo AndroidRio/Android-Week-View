@@ -6,11 +6,10 @@
     tools:context=".MyActivity"
     android:background="#fff">
 
-    <com.alamkanak.weekview.WeekView
+    <!--<com.alamkanak.weekview.WeekView
         android:id="@+id/weekView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:eventTextColor="@android:color/white"
         app:textSize="12sp"
         app:hourHeight="60dp"
         app:headerColumnPadding="8dp"
@@ -22,6 +21,25 @@
         app:dayBackgroundColor="#05000000"
         app:todayBackgroundColor="#1848adff"
         app:headerColumnBackground="#ffffffff"
-        app:todayHeaderTextColor="@color/accent"/>
+        app:todayHeaderTextColor="@color/accent"/>-->
+
+    <com.alamkanak.weekview.WeekView
+        android:id="@+id/weekView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:textSize="12sp"
+        app:dayTextSize="24sp"
+        app:hourHeight="60dp"
+        app:headerColumnPadding="12dp"
+        app:headerColumnTextColor="#8f000000"
+        app:headerRowPadding="12dp"
+        app:columnGap="0dp"
+        app:noOfVisibleDays="3"
+        app:eventPadding="8dp"
+        app:headerRowBackgroundColor="#fff"
+        app:dayBackgroundColor="#fff"
+        app:todayBackgroundColor="#1848adff"
+        app:headerColumnBackground="#fff"
+        app:todayHeaderTextColor="@color/primary"/>
 
 </RelativeLayout>
