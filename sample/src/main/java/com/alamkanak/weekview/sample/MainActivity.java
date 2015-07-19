@@ -3,20 +3,16 @@ package com.alamkanak.weekview.sample;
 import android.graphics.RectF;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.alamkanak.weekview.DateTimeInterpreter;
 import com.alamkanak.weekview.WeekView;
 import com.alamkanak.weekview.WeekViewEvent;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
-import java.util.Locale;
 
 
 /**
@@ -77,9 +73,9 @@ public class MainActivity extends ActionBarActivity implements WeekView.MonthCha
                     mWeekView.setNumberOfVisibleDays(1);
 
                     // Lets change some dimensions to best fit the view.
-                    mWeekView.setColumnGap((int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 8, getResources().getDisplayMetrics()));
+                    /*mWeekView.setColumnGap((int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 8, getResources().getDisplayMetrics()));
                     mWeekView.setTextSize((int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 12, getResources().getDisplayMetrics()));
-                    mWeekView.setEventTextSize((int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 12, getResources().getDisplayMetrics()));
+                    mWeekView.setEventTextSize((int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 12, getResources().getDisplayMetrics()));*/
                 }
                 return true;
             case R.id.action_three_day_view:
@@ -89,9 +85,9 @@ public class MainActivity extends ActionBarActivity implements WeekView.MonthCha
                     mWeekView.setNumberOfVisibleDays(3);
 
                     // Lets change some dimensions to best fit the view.
-                    mWeekView.setColumnGap((int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 8, getResources().getDisplayMetrics()));
+                   /* mWeekView.setColumnGap((int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 8, getResources().getDisplayMetrics()));
                     mWeekView.setTextSize((int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 12, getResources().getDisplayMetrics()));
-                    mWeekView.setEventTextSize((int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 12, getResources().getDisplayMetrics()));
+                    mWeekView.setEventTextSize((int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 12, getResources().getDisplayMetrics()));*/
                 }
                 return true;
             case R.id.action_week_view:
@@ -101,9 +97,9 @@ public class MainActivity extends ActionBarActivity implements WeekView.MonthCha
                     mWeekView.setNumberOfVisibleDays(7);
 
                     // Lets change some dimensions to best fit the view.
-                    mWeekView.setColumnGap((int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 2, getResources().getDisplayMetrics()));
+                    /*mWeekView.setColumnGap((int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 2, getResources().getDisplayMetrics()));
                     mWeekView.setTextSize((int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 10, getResources().getDisplayMetrics()));
-                    mWeekView.setEventTextSize((int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 10, getResources().getDisplayMetrics()));
+                    mWeekView.setEventTextSize((int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 10, getResources().getDisplayMetrics()));*/
                 }
                 return true;
         }
@@ -117,7 +113,7 @@ public class MainActivity extends ActionBarActivity implements WeekView.MonthCha
      * @param shortDate True if the date values should be short.
      */
     private void setupDateTimeInterpreter(final boolean shortDate) {
-        mWeekView.setDateTimeInterpreter(new DateTimeInterpreter() {
+        /*mWeekView.setDateTimeInterpreter(new DateTimeInterpreter() {
             @Override
             public String interpretDate(Calendar date) {
                 SimpleDateFormat weekdayNameFormat = new SimpleDateFormat("EEE", Locale.getDefault());
@@ -136,7 +132,7 @@ public class MainActivity extends ActionBarActivity implements WeekView.MonthCha
             public String interpretTime(int hour) {
                 return hour > 11 ? (hour - 12) + " PM" : (hour == 0 ? "12 AM" : hour + " AM");
             }
-        });
+        });*/
     }
 
     @Override
@@ -157,7 +153,7 @@ public class MainActivity extends ActionBarActivity implements WeekView.MonthCha
         event.setColor(getResources().getColor(R.color.event_color_01));
         events.add(event);
 
-        startTime = Calendar.getInstance();
+        /*startTime = Calendar.getInstance();
         startTime.set(Calendar.HOUR_OF_DAY, 3);
         startTime.set(Calendar.MINUTE, 30);
         startTime.set(Calendar.MONTH, newMonth-1);
@@ -168,7 +164,7 @@ public class MainActivity extends ActionBarActivity implements WeekView.MonthCha
         endTime.set(Calendar.MONTH, newMonth-1);
         event = new WeekViewEvent(10, getEventTitle(startTime), startTime, endTime);
         event.setColor(getResources().getColor(R.color.event_color_02));
-        events.add(event);
+        events.add(event);*/
 
         startTime = Calendar.getInstance();
         startTime.set(Calendar.HOUR_OF_DAY, 4);
@@ -247,7 +243,7 @@ public class MainActivity extends ActionBarActivity implements WeekView.MonthCha
     }
 
     private String getEventTitle(Calendar time) {
-        return String.format("Event of %02d:%02d %s/%d", time.get(Calendar.HOUR_OF_DAY), time.get(Calendar.MINUTE), time.get(Calendar.MONTH)+1, time.get(Calendar.DAY_OF_MONTH));
+        return String.format("Disponível", time.get(Calendar.HOUR_OF_DAY), time.get(Calendar.MINUTE), time.get(Calendar.MONTH)+1, time.get(Calendar.DAY_OF_MONTH));
     }
 
     @Override
